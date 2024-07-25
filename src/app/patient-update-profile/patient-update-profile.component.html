@@ -1,0 +1,24 @@
+<section class="content">
+  <form (ngSubmit)="onSubmit()" [formGroup]="userForm">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" formControlName="username" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="userPassword">Password</label>
+      <input type="password" id="userPassword" formControlName="userPassword" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="profilePicture">Profile Picture</label>
+      <input type="file" id="profilePicture" (change)="onFileSelected($event)" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+  <button type="button" class="btn btn-danger" (click)="onDeleteAccount()">Delete Account</button>
+  <!-- <button type="button" (click)="deleteAccount()" class="btn btn-danger">Delete Account</button> -->
+  
+</section>

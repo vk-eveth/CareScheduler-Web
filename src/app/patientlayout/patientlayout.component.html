@@ -1,0 +1,22 @@
+<div class="container">
+    <nav class="sidebar">
+        <div class="profile">
+            <img *ngIf="profilePictureUrl" [src]="profilePictureUrl" />
+            <h3 *ngIf="currentUser">{{ currentUser.username }}</h3>
+        </div>
+        <ul>
+            <li><a routerLink="patient-dashboard">Dashboard</a></li>
+            <li><a routerLink="patient-appointment">My Appointments</a></li>
+            <li><a routerLink="patient-book-appointment">Book Appointment</a></li>
+            <li><a routerLink="patient-update-profile">My Profile</a></li>
+            <li><a (click)="logout()">Logout</a></li>
+        </ul>
+    </nav>
+        <header>
+            <button id="toggleSidebar">☰</button>
+            <h1>{{ currentHeader }}</h1>
+        </header>
+        <main class="main-content">
+            <router-outlet></router-outlet>
+        </main>
+</div>

@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('./resources/assets/y.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+  margin-top: 100px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  height: 85vh;
+  z-index: 999;
+}

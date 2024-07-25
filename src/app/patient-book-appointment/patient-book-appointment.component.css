@@ -1,0 +1,78 @@
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters label {
+  margin-right: 10px;
+}
+
+.filters select, .filters input[type="text"], .filters button {
+  padding: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.filters button {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.doctors-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.doctor-info {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  background-image: url('../../resources/assets/e.jpg');
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+}
+
+.doctor-info:hover {
+  transform: translateY(-5px);
+}
+
+.doctor-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.doctor-info p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  color: #3e0540;
+}
+
+.doctor-info button {
+  padding: 8px 16px;
+  background-color: #476b7a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.doctor-info button:hover {
+  background-color: #218838;
+}
+
+.selSpec, .visReason, .appDat{
+  line-height: 55px;
+  /* margin: 20px; */
+  /* padding: 15px; */
+}

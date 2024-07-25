@@ -1,0 +1,25 @@
+section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    color: rgb(0, 0, 0);
+    background-color: #f6f9ff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 1.6;
+    background-image: url('../../resources/assets/o.jpg');
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed; */
+  }
+
+  section p {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    section {
+      padding: 20px;
+    }
+  }

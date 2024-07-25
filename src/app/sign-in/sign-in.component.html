@@ -1,0 +1,28 @@
+<div *ngIf="notification" [ngClass]="{'notification': true, 'error': isError}">
+  {{ notification }}
+</div>
+<section>
+  <form id="loginForm" (ngSubmit)="submitForm()" [formGroup]="loginForm">
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" formControlName="email" required>
+      <div style="color: red;" *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="alert alert-danger">
+        Enter a valid email.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" required>
+      <div style="color: red;" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="alert alert-danger">
+        Password is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="remember" formControlName="remember">
+      <label for="remember">Remember Me</label>
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid" (click)="alertIfInvalid()">Login</button>
+  </form>
+  <p><a href="#">Forgot Password?</a></p>
+  <p style="color: rgb(30, 36, 19);">Don't have an account? <a routerLink="/sign-up">Sign Up</a></p>
+</section>

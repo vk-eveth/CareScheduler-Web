@@ -1,0 +1,40 @@
+<section class="content">
+  <div class="filters">
+    <div class="selSpec">
+      <label for="specialty">Specialty:</label>
+    <select id="specialty" [(ngModel)]="selectedSpecialty" (change)="filterDoctors()">
+      <option value="Any">Any</option>
+      <option *ngFor="let doctor of doctors" [value]="doctor.specialty">{{ doctor.specialty }}</option>
+    </select>
+    <button (click)="clearFilters()">Clear Filters</button>
+    </div>
+    <div class="visReason">
+      <label for="visitreason">Reason for Visit:</label>
+      <input type="text" id="visitreason" [(ngModel)]="visitReason">
+    </div>
+    <div class="appDat">
+      <label for="appointmentDateTime">Appointment Date and Time:</label>
+      <input type="datetime-local" id="appointmentDateTime" [(ngModel)]="appointmentDateTime">
+    </div>
+  </div>
+
+  <div class="doctors-list">
+    <div *ngFor="let doctor of doctors">
+      <div class="doctor-info">
+        <div>
+          <h3>Doctor Name: {{ doctor.user.username }}</h3>
+          <p>Qualification: {{ doctor.qualifications }}</p>
+          <p>Specialty: {{ doctor.specialty }}</p>
+          <p>Experience Years: {{ doctor.experienceYears }}</p>
+          <button (click)="bookAppointment(doctor)">Book Appointment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showSuccess" class="success-animation content">
+    <div class="success-message">
+      <h1>Congratulations!</h1>
+      <p>Your has been successfully Booked an Appointment.</p>
+    </div>
+  </div>
+</section>

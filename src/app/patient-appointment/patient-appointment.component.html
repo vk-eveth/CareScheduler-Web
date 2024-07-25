@@ -1,0 +1,26 @@
+<section class="content">
+  <div *ngIf="appointments.length > 0" class="appointment-list">
+
+    <div *ngFor="let appointment of confirmedAppointments()" class="appointment confirmed">
+      <h2>{{ appointment.doctor.user.username }} <span> - {{ appointment.doctor.specialty }}</span></h2>
+      <p>Reason For Visit: {{ appointment.reasonForVisit }}</p>
+      <p>Date: {{ appointment.appointmentDateTime | customDate:'mediumDate' }}</p>
+      <p>Time: {{ appointment.appointmentDateTime | customDate:'shortTime' }}</p>
+      <p>Status: {{ appointment.status }}</p>
+    </div>
+
+    <div *ngFor="let appointment of unconfirmedAppointments()" class="appointment">
+      <h2>{{ appointment.doctor.user.username }} <span> - {{ appointment.doctor.specialty }}</span></h2>
+      <p>Reason For Visit: {{ appointment.reasonForVisit }}</p>
+      <p>Date: {{ appointment.appointmentDateTime | customDate:'mediumDate' }}</p>
+      <p>Time: {{ appointment.appointmentDateTime | customDate:'shortTime' }}</p>
+      <p>Session Start Time: {{ appointment.sessionStartTime}}</p>
+      <p>Session Start Time: {{ appointment.sessionEndTime}}</p>
+      <p>Status: {{ appointment.status }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="appointments.length === 0" class="no-appointments">
+    <p>No appointments found.</p>
+  </div>
+</section>  
